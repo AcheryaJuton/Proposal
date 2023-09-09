@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Proposal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #060101;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        #love-icon-container {
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            animation: rain 2s linear infinite;
+        }
+        .love-icon {
+            font-size: 48px;
+            color: #ff0066;
+            display: inline-block;
+            vertical-align: middle;
+            position: absolute;
+            animation: spin 1s infinite;
+        }
+        @keyframes rain {
+            0% {
+                transform: translateY(0) rotate(0);
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+            }
+        }
+        @keyframes spin {
+            0% {
+                transform: rotate(0);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        #message-container {
+            text-align: center;
+            opacity: 0;
+            transform: scale(0);
+            transition: opacity 1s, transform 1s;
+        }
+        #message {
+            font-size: 60px;
+            color: #ff0066;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        #love-icon {
+            font-size:50px;
+            color: #ff0066;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        #button-container {
+            text-align: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        button {
+            font-size: 24px;
+            padding: 10px 20px;
+            background-color: #ff0066;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #cc0052;
+        }
+
+        @media (max-width: 600px) {
+            #message {
+                font-size: 24px;
+            }
+            #love-icon {
+                font-size: 24px;
+            }
+            button {
+                font-size: 20px;
+                padding: 8px 16px;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        img {
+            animation: fadeIn 1s forwards;
+        }
+    </style>
+</head>
+<body>
+    <audio id="background-music" loop>
+        <source src="./image/love-ringtone-57547.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+<div id="love-icon-container">
+    <div class="love-icon">❤️</div>
+    <div class="love-icon">❤️</div>
+    <div class="love-icon">❤️</div>
+    <div class="love-icon">❤️</div>
+    <div class="love-icon">❤️</div>
+</div>
+
+<div id="message-container">
+    <img style="height: 300px; width: 300px; border-radius:60px;" src="./image/369901095_856032072802501_7171863557036907194_n.jpg" alt="">
+    <div id="message">Love you Sangita</div> <span id="love-icon">❤️</span>
+</div>
+
+<div id="button-container">
+    <button onclick="showMessage()">Click me</button>
+</div>
+
+<script>
+    function showMessage() {
+        var messageContainer = document.getElementById("message-container");
+        messageContainer.style.opacity = "1";
+        messageContainer.style.transform = "scale(1)";
+
+        var button = document.getElementById("button-container");
+        button.style.display = "none";
+
+        var audio = document.getElementById("background-music");
+        audio.play(); // This line plays the audio
+    }
+</script>
+
+</body>
+</html>
